@@ -1,0 +1,10 @@
+repo_url: https://chen08209.github.io/flclash-fdroid-repo/repo
+repo_name: FlClash
+repo_description: >-
+  The official F-Droid repository for FlClash.
+
+repo_keyalias: KEYALIAS
+keystore: keystore.keystore
+keystorepass: KEYSTOREPASS
+keypass: KEYPASS
+keydname: KEYDNAME

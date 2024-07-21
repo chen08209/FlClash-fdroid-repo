@@ -1,0 +1,61 @@
+name: deploy
+
+on:
+  push:
+    paths:
+      - 'tmp/*.apk'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Setup fdroidserver and aapt
+        run: |
+          sudo apt-get update
+          sudo apt-get install fdroidserver aapt -y
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Move apks
+        run: |
+          mv ./tmp/*.apk ./fdroid/repo/
+          rm -r ./tmp/
+
+      - name: Set Secrets
+        run: |
+          cd ./fdroid/
+          export VERSION=$(aapt dump badging ./repo/FlClash-*-android-arm64-v8a.apk | grep versionName | sed "s/.*versionName='//" | sed "s/'.*//")
+          export VERSIONCODE=$(aapt dump badging ./repo/FlClash-*-android-arm64-v8a.apk | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
+
+          sed -i 's/KEYALIAS/${{ secrets.KEY_ALIAS }}/g' config.yml
+          sed -i 's/KEYSTOREPASS/${{ secrets.STORE_PASSWORD }}/g' config.yml
+          sed -i 's/KEYPASS/${{ secrets.KEY_PASSWORD }}/g' config.yml
+          sed -i 's/KEYDNAME/${{ secrets.KEY_DNAME }}/g' config.yml
+          echo "${{ secrets.KEYSTORE }}" | base64 --decode > keystore.keystore
+
+          sed -i "s/VERSIONCODE/$VERSIONCODE/g" ./metadata/com.follow.clash.yml
+          sed -i "s/VERSION/$VERSION/g" ./metadata/com.follow.clash.yml
+
+          cd ..
+
+      - name: Update fdroidrepo
+        run: |
+          cd ./fdroid/
+          /usr/bin/fdroid update --pretty --delete-unknown --use-date-from-apk
+          rm config.yml
+          cd ..
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: fdroid
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+

@@ -1,0 +1,9 @@
+✈️ 多平台: Android, Windows, macOS and Linux
+
+💻 自适应多个屏幕尺寸,多种颜色主题可供选择
+
+💡 基本 Material You 设计, 类Surfboard用户界面
+
+☁️ 支持通过WebDAV同步数据
+
+✨ 支持一键导入订阅, 深色模式

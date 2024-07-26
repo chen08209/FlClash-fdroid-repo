@@ -1,0 +1,11 @@
+{
+  "/etc/issue.net": "Ubuntu 22.04.4 LTS",
+  "commandLine": [
+    "/usr/bin/fdroid update",
+    "--pretty",
+    "--delete-unknown",
+    "--use-date-from-apk"
+  ],
+  "startTimestamp": 1722001739000,
+  "subcommand": "update"
+}

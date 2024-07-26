@@ -68,7 +68,7 @@
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
     "size": 38854371,
     "apkName": "FlClash-0.8.45-android-arm64-v8a.apk",
-    "added": 1722002219.105007
+    "added": 1722003395.920532
   },
   "FlClash-0.8.45-android-armeabi-v7a.apk": {
     "hash": "3d83de4cb9be2e40cfedfcfc27f081a49afd41c7871faf5f19fd6612f54458a5",
@@ -137,7 +137,7 @@
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
     "size": 38573095,
     "apkName": "FlClash-0.8.45-android-armeabi-v7a.apk",
-    "added": 1722002219.225006
+    "added": 1722003396.036532
   },
   "FlClash-0.8.45-android-x86_64.apk": {
     "hash": "dc5c8355da69570da5ca1d14174a088d2f2ab0798d5ae108b19217ad5edf993f",
@@ -206,6 +206,6 @@
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
     "size": 40154084,
     "apkName": "FlClash-0.8.45-android-x86_64.apk",
-    "added": 1722002219.349006
+    "added": 1722003396.160532
   }
 }

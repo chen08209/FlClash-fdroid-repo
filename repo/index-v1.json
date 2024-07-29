@@ -1,10 +1,10 @@
 {
   "repo": {
-    "timestamp": 1722004083000,
+    "timestamp": 1722244711000,
     "version": 20001,
     "name": "FlClash",
     "icon": "icon.png",
-    "address": "https://chen08209.github.io/flclash-fdroid-repo/repo",
+    "address": "https://chen08209.github.io/FlClash-fdroid-repo/repo",
     "description": "The official F-Droid repository for FlClash."
   },
   "requests": {
@@ -22,24 +22,24 @@
         "Connectivity"
       ],
       "changelog": "https://github.com/chen08209/FlClash/releases",
-      "suggestedVersionName": "0.8.45",
-      "suggestedVersionCode": "202409201",
+      "suggestedVersionName": "0.8.48",
+      "suggestedVersionCode": "202409251",
       "issueTracker": "https://github.com/chen08209/FlClash/issues",
       "license": "GPL-3.0-or-later",
       "name": "FlClash",
       "sourceCode": "https://github.com/chen08209/FlClash",
-      "added": 1722004078000,
+      "added": 1722244707000,
       "packageName": "com.follow.clash",
-      "lastUpdated": 1722004078000,
+      "lastUpdated": 1722244707000,
       "localized": {
         "en-US": {
           "description": "\u2708\ufe0f Multi-platform: Android, Windows, macOS and Linux\n\n\ud83d\udcbb Adaptive multiple screen sizes, Multiple color themes available\n\n\ud83d\udca1 Based on Material You Design, Surfboard-like UI\n\n\u2601\ufe0f Supports data sync via WebDAV\n\n\u2728 Support subscription link, Dark mode",
-          "icon": "icon_wBRTdmGa0ZTQtmWYwE8LJwtozfZgBHo-HkbrZSERSm0=.png",
+          "icon": "icon_WEd-r8lMFUzb7RfF4hkm1NZdvmb7DZSsQI-L_YuRq7A=.png",
           "summary": "A multi-platform proxy client based on ClashMeta."
         },
         "zh-CN": {
           "description": "\u2708\ufe0f \u591a\u5e73\u53f0: Android, Windows, macOS and Linux\n\n\ud83d\udcbb \u81ea\u9002\u5e94\u591a\u4e2a\u5c4f\u5e55\u5c3a\u5bf8,\u591a\u79cd\u989c\u8272\u4e3b\u9898\u53ef\u4f9b\u9009\u62e9\n\n\ud83d\udca1 \u57fa\u672c Material You \u8bbe\u8ba1, \u7c7bSurfboard\u7528\u6237\u754c\u9762\n\n\u2601\ufe0f \u652f\u6301\u901a\u8fc7WebDAV\u540c\u6b65\u6570\u636e\n\n\u2728 \u652f\u6301\u4e00\u952e\u5bfc\u5165\u8ba2\u9605, \u6df1\u8272\u6a21\u5f0f",
-          "icon": "icon_wBRTdmGa0ZTQtmWYwE8LJwtozfZgBHo-HkbrZSERSm0=.png",
+          "icon": "icon_WEd-r8lMFUzb7RfF4hkm1NZdvmb7DZSsQI-L_YuRq7A=.png",
           "summary": "\u57fa\u4e8eClashMeta\u7684\u591a\u5e73\u53f0\u4ee3\u7406\u5ba2\u6237\u7aef\uff0c\u7b80\u5355\u6613\u7528\uff0c\u5f00\u6e90\u65e0\u5e7f\u544a\u3002"
         }
       }
@@ -48,9 +48,9 @@
   "packages": {
     "com.follow.clash": [
       {
-        "added": 1722004078000,
-        "apkName": "FlClash-0.8.45-android-x86_64.apk",
-        "hash": "dc5c8355da69570da5ca1d14174a088d2f2ab0798d5ae108b19217ad5edf993f",
+        "added": 1722244707000,
+        "apkName": "FlClash-0.8.48-android-x86_64.apk",
+        "hash": "e346c601f2bb99674b26a3e942ba6e6d928368cd8e8f5fccea0837532c81ae23",
         "hashType": "sha256",
         "minSdkVersion": 21,
         "nativecode": [
@@ -59,7 +59,7 @@
         "packageName": "com.follow.clash",
         "sig": "01d20204fe36565bf08806d0249b75a9",
         "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-        "size": 40154084,
+        "size": 40102082,
         "targetSdkVersion": 34,
         "uses-permission": [
           [
@@ -107,13 +107,13 @@
             null
           ]
         ],
-        "versionCode": 202411201,
-        "versionName": "0.8.45"
+        "versionCode": 202411251,
+        "versionName": "0.8.48"
       },
       {
-        "added": 1722004078000,
-        "apkName": "FlClash-0.8.45-android-arm64-v8a.apk",
-        "hash": "e6083bb3fbd4c7e9c714acca10cbdd8d06479b0d62ca2738cb32cd89869e2446",
+        "added": 1722244707000,
+        "apkName": "FlClash-0.8.48-android-arm64-v8a.apk",
+        "hash": "2e0a732a0cfc37b9f59da0a5040525852b69335892c7f010e8e2fea0c9d7a8a4",
         "hashType": "sha256",
         "minSdkVersion": 21,
         "nativecode": [
@@ -122,7 +122,7 @@
         "packageName": "com.follow.clash",
         "sig": "01d20204fe36565bf08806d0249b75a9",
         "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-        "size": 38854371,
+        "size": 38806767,
         "targetSdkVersion": 34,
         "uses-permission": [
           [
@@ -170,13 +170,13 @@
             null
           ]
         ],
-        "versionCode": 202409201,
-        "versionName": "0.8.45"
+        "versionCode": 202409251,
+        "versionName": "0.8.48"
       },
       {
-        "added": 1722004078000,
-        "apkName": "FlClash-0.8.45-android-armeabi-v7a.apk",
-        "hash": "3d83de4cb9be2e40cfedfcfc27f081a49afd41c7871faf5f19fd6612f54458a5",
+        "added": 1722244707000,
+        "apkName": "FlClash-0.8.48-android-armeabi-v7a.apk",
+        "hash": "e465165e5ccc68129b5b3d29d02a6b00003238a561197fc0a9caa69d4a5251e1",
         "hashType": "sha256",
         "minSdkVersion": 21,
         "nativecode": [
@@ -185,7 +185,7 @@
         "packageName": "com.follow.clash",
         "sig": "01d20204fe36565bf08806d0249b75a9",
         "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-        "size": 38573095,
+        "size": 38518441,
         "targetSdkVersion": 34,
         "uses-permission": [
           [
@@ -233,8 +233,8 @@
             null
           ]
         ],
-        "versionCode": 202408201,
-        "versionName": "0.8.45"
+        "versionCode": 202408251,
+        "versionName": "0.8.48"
       }
     ]
   }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fdroid>
-	<repo icon="icon.png" name="FlClash" pubkey="308203843082026ca003020102020900afb778b01a6dfd3c300d06092a864886f70d01010b0500306f3110300e06035504061307556e6b6e6f776e3110300e06035504081307556e6b6e6f776e3110300e06035504071307556e6b6e6f776e31133011060355040a130a636f6d2e666f6c6c6f773110300e060355040b1307556e6b6e6f776e3110300e06035504031307556e6b6e6f776e3020170d3234303732363134323435355a180f32303531313231323134323435355a306f3110300e06035504061307556e6b6e6f776e3110300e06035504081307556e6b6e6f776e3110300e06035504071307556e6b6e6f776e31133011060355040a130a636f6d2e666f6c6c6f773110300e060355040b1307556e6b6e6f776e3110300e06035504031307556e6b6e6f776e30820122300d06092a864886f70d01010105000382010f003082010a0282010100b84577ba92afeb4f69fc6583ee6ba4457a20cbca2b07482cd3a3267b39e6fc4b8b40bd6910be7280997a2e6c0d149cb6c7a557a9db3eac2bf1b2d6781cf3b0a9389ab500888f9663c3d14fcac8d213427d621650b28817dd20a337ade8fcd7015bb57da961635a3f899aecbefeddf2fe21c1f7e012a654c95c01372f170fb44acf8e192fced83b609389cf9498d784cb7c2a189e805dd92cee84208bb66ac628a6bf164352a44f44de879f3b578560c3dbd94b52895328e1642c6a68b8e9edea8bbf2c8858f5d549b9c479cd7d16b4d67b781bf8a16b63e25fc94acb8a33f958e141d667500e81ab265a15afb4cfd86a75c1fc10e5247fcf2a518cccdf52d1ef0203010001a321301f301d0603551d0e041604144e6cab7f7495c6da2fbb8e4fb351fe3a778bbe32300d06092a864886f70d01010b050003820101007830184e8221364f104862501d7ec06ce3efd5ef89e8e01efe51c9258b8a28f20252ae2a4b07ce0b9e9ef8188a2e5110575b4427f4804296101edd194dde3beaeec9beb9c0eb0484343fede32ff755d3501ebff8e0d2b12899d235a9ec102b5eebd71fd88ba603b60e48393aab5020ab0e00161b80b796ff24e01d00299a0542b7bc8ecc82074da884c9a00df4dd1279f712d020b01b5201ac16e88ab019e57ea24313b3782d5744409507be349512421ef8fa545b9fa79ccacce336a9b6c7bbddbdf37a7e97808ec41e41dab0388a484b5727576ae960dd14a645b3bb3bd5b74d189c0915263b7ea324c5dd3e48d8f1f88def401c52414a0107022663843bab" timestamp="1722004083" url="https://chen08209.github.io/flclash-fdroid-repo/repo" version="20001">
+	<repo icon="icon.png" name="FlClash" pubkey="308203843082026ca003020102020900afb778b01a6dfd3c300d06092a864886f70d01010b0500306f3110300e06035504061307556e6b6e6f776e3110300e06035504081307556e6b6e6f776e3110300e06035504071307556e6b6e6f776e31133011060355040a130a636f6d2e666f6c6c6f773110300e060355040b1307556e6b6e6f776e3110300e06035504031307556e6b6e6f776e3020170d3234303732363134323435355a180f32303531313231323134323435355a306f3110300e06035504061307556e6b6e6f776e3110300e06035504081307556e6b6e6f776e3110300e06035504071307556e6b6e6f776e31133011060355040a130a636f6d2e666f6c6c6f773110300e060355040b1307556e6b6e6f776e3110300e06035504031307556e6b6e6f776e30820122300d06092a864886f70d01010105000382010f003082010a0282010100b84577ba92afeb4f69fc6583ee6ba4457a20cbca2b07482cd3a3267b39e6fc4b8b40bd6910be7280997a2e6c0d149cb6c7a557a9db3eac2bf1b2d6781cf3b0a9389ab500888f9663c3d14fcac8d213427d621650b28817dd20a337ade8fcd7015bb57da961635a3f899aecbefeddf2fe21c1f7e012a654c95c01372f170fb44acf8e192fced83b609389cf9498d784cb7c2a189e805dd92cee84208bb66ac628a6bf164352a44f44de879f3b578560c3dbd94b52895328e1642c6a68b8e9edea8bbf2c8858f5d549b9c479cd7d16b4d67b781bf8a16b63e25fc94acb8a33f958e141d667500e81ab265a15afb4cfd86a75c1fc10e5247fcf2a518cccdf52d1ef0203010001a321301f301d0603551d0e041604144e6cab7f7495c6da2fbb8e4fb351fe3a778bbe32300d06092a864886f70d01010b050003820101007830184e8221364f104862501d7ec06ce3efd5ef89e8e01efe51c9258b8a28f20252ae2a4b07ce0b9e9ef8188a2e5110575b4427f4804296101edd194dde3beaeec9beb9c0eb0484343fede32ff755d3501ebff8e0d2b12899d235a9ec102b5eebd71fd88ba603b60e48393aab5020ab0e00161b80b796ff24e01d00299a0542b7bc8ecc82074da884c9a00df4dd1279f712d020b01b5201ac16e88ab019e57ea24313b3782d5744409507be349512421ef8fa545b9fa79ccacce336a9b6c7bbddbdf37a7e97808ec41e41dab0388a484b5727576ae960dd14a645b3bb3bd5b74d189c0915263b7ea324c5dd3e48d8f1f88def401c52414a0107022663843bab" timestamp="1722244711" url="https://chen08209.github.io/FlClash-fdroid-repo/repo" version="20001">
 		<description>The official F-Droid repository for FlClash.</description>
 	</repo>
 	<application id="com.follow.clash">
 		<id>com.follow.clash</id>
-		<added>2024-07-26</added>
-		<lastupdated>2024-07-26</lastupdated>
+		<added>2024-07-29</added>
+		<lastupdated>2024-07-29</lastupdated>
 		<name>FlClash</name>
 		<summary>A multi-platform proxy client based on ClashMeta.</summary>
 		<desc>✈️ Multi-platform: Android, Windows, macOS and Linux
@@ -26,45 +26,45 @@
 		<tracker>https://github.com/chen08209/FlClash/issues</tracker>
 		<changelog>https://github.com/chen08209/FlClash/releases</changelog>
 		<author>chen08209</author>
-		<marketversion>0.8.45</marketversion>
-		<marketvercode>202409201</marketvercode>
+		<marketversion>0.8.48</marketversion>
+		<marketvercode>202409251</marketvercode>
 		<package>
-			<version>0.8.45</version>
-			<versioncode>202411201</versioncode>
-			<apkname>FlClash-0.8.45-android-x86_64.apk</apkname>
-			<hash type="sha256">dc5c8355da69570da5ca1d14174a088d2f2ab0798d5ae108b19217ad5edf993f</hash>
-			<size>40154084</size>
+			<version>0.8.48</version>
+			<versioncode>202411251</versioncode>
+			<apkname>FlClash-0.8.48-android-x86_64.apk</apkname>
+			<hash type="sha256">e346c601f2bb99674b26a3e942ba6e6d928368cd8e8f5fccea0837532c81ae23</hash>
+			<size>40102082</size>
 			<sdkver>21</sdkver>
 			<targetSdkVersion>34</targetSdkVersion>
-			<added>2024-07-26</added>
+			<added>2024-07-29</added>
 			<sig>01d20204fe36565bf08806d0249b75a9</sig>
 			<permissions>ACCESS_NETWORK_STATE,CAMERA,CHANGE_NETWORK_STATE,FOREGROUND_SERVICE,FOREGROUND_SERVICE_SPECIAL_USE,INTERNET,POST_NOTIFICATIONS,QUERY_ALL_PACKAGES,READ_EXTERNAL_STORAGE,RECEIVE_BOOT_COMPLETED,com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions>
 			<uses-permission maxSdkVersion="32" name="android.permission.READ_EXTERNAL_STORAGE"/>
 			<nativecode>x86_64</nativecode>
 		</package>
 		<package>
-			<version>0.8.45</version>
-			<versioncode>202409201</versioncode>
-			<apkname>FlClash-0.8.45-android-arm64-v8a.apk</apkname>
-			<hash type="sha256">e6083bb3fbd4c7e9c714acca10cbdd8d06479b0d62ca2738cb32cd89869e2446</hash>
-			<size>38854371</size>
+			<version>0.8.48</version>
+			<versioncode>202409251</versioncode>
+			<apkname>FlClash-0.8.48-android-arm64-v8a.apk</apkname>
+			<hash type="sha256">2e0a732a0cfc37b9f59da0a5040525852b69335892c7f010e8e2fea0c9d7a8a4</hash>
+			<size>38806767</size>
 			<sdkver>21</sdkver>
 			<targetSdkVersion>34</targetSdkVersion>
-			<added>2024-07-26</added>
+			<added>2024-07-29</added>
 			<sig>01d20204fe36565bf08806d0249b75a9</sig>
 			<permissions>ACCESS_NETWORK_STATE,CAMERA,CHANGE_NETWORK_STATE,FOREGROUND_SERVICE,FOREGROUND_SERVICE_SPECIAL_USE,INTERNET,POST_NOTIFICATIONS,QUERY_ALL_PACKAGES,READ_EXTERNAL_STORAGE,RECEIVE_BOOT_COMPLETED,com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions>
 			<uses-permission maxSdkVersion="32" name="android.permission.READ_EXTERNAL_STORAGE"/>
 			<nativecode>arm64-v8a</nativecode>
 		</package>
 		<package>
-			<version>0.8.45</version>
-			<versioncode>202408201</versioncode>
-			<apkname>FlClash-0.8.45-android-armeabi-v7a.apk</apkname>
-			<hash type="sha256">3d83de4cb9be2e40cfedfcfc27f081a49afd41c7871faf5f19fd6612f54458a5</hash>
-			<size>38573095</size>
+			<version>0.8.48</version>
+			<versioncode>202408251</versioncode>
+			<apkname>FlClash-0.8.48-android-armeabi-v7a.apk</apkname>
+			<hash type="sha256">e465165e5ccc68129b5b3d29d02a6b00003238a561197fc0a9caa69d4a5251e1</hash>
+			<size>38518441</size>
 			<sdkver>21</sdkver>
 			<targetSdkVersion>34</targetSdkVersion>
-			<added>2024-07-26</added>
+			<added>2024-07-29</added>
 			<sig>01d20204fe36565bf08806d0249b75a9</sig>
 			<permissions>ACCESS_NETWORK_STATE,CAMERA,CHANGE_NETWORK_STATE,FOREGROUND_SERVICE,FOREGROUND_SERVICE_SPECIAL_USE,INTERNET,POST_NOTIFICATIONS,QUERY_ALL_PACKAGES,READ_EXTERNAL_STORAGE,RECEIVE_BOOT_COMPLETED,com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions>
 			<uses-permission maxSdkVersion="32" name="android.permission.READ_EXTERNAL_STORAGE"/>

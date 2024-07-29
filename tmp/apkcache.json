@@ -1,8 +1,8 @@
 {
   "METADATA_VERSION": 20001,
   "allow_disabled_algorithms": false,
-  "FlClash-0.8.45-android-arm64-v8a.apk": {
-    "hash": "e6083bb3fbd4c7e9c714acca10cbdd8d06479b0d62ca2738cb32cd89869e2446",
+  "FlClash-0.8.48-android-arm64-v8a.apk": {
+    "hash": "2e0a732a0cfc37b9f59da0a5040525852b69335892c7f010e8e2fea0c9d7a8a4",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -56,9 +56,9 @@
     "icons": {},
     "antiFeatures": [],
     "packageName": "com.follow.clash",
-    "versionCode": 202409201,
+    "versionCode": 202409251,
     "name": "FlClash",
-    "versionName": "0.8.45",
+    "versionName": "0.8.48",
     "minSdkVersion": 21,
     "targetSdkVersion": 34,
     "nativecode": [
@@ -66,12 +66,12 @@
     ],
     "sig": "01d20204fe36565bf08806d0249b75a9",
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-    "size": 38854371,
-    "apkName": "FlClash-0.8.45-android-arm64-v8a.apk",
-    "added": 1722004078.752914
+    "size": 38806767,
+    "apkName": "FlClash-0.8.48-android-arm64-v8a.apk",
+    "added": 1722244707.144965
   },
-  "FlClash-0.8.45-android-armeabi-v7a.apk": {
-    "hash": "3d83de4cb9be2e40cfedfcfc27f081a49afd41c7871faf5f19fd6612f54458a5",
+  "FlClash-0.8.48-android-armeabi-v7a.apk": {
+    "hash": "e465165e5ccc68129b5b3d29d02a6b00003238a561197fc0a9caa69d4a5251e1",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -125,9 +125,9 @@
     "icons": {},
     "antiFeatures": [],
     "packageName": "com.follow.clash",
-    "versionCode": 202408201,
+    "versionCode": 202408251,
     "name": "FlClash",
-    "versionName": "0.8.45",
+    "versionName": "0.8.48",
     "minSdkVersion": 21,
     "targetSdkVersion": 34,
     "nativecode": [
@@ -135,12 +135,12 @@
     ],
     "sig": "01d20204fe36565bf08806d0249b75a9",
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-    "size": 38573095,
-    "apkName": "FlClash-0.8.45-android-armeabi-v7a.apk",
-    "added": 1722004078.868914
+    "size": 38518441,
+    "apkName": "FlClash-0.8.48-android-armeabi-v7a.apk",
+    "added": 1722244707.260965
   },
-  "FlClash-0.8.45-android-x86_64.apk": {
-    "hash": "dc5c8355da69570da5ca1d14174a088d2f2ab0798d5ae108b19217ad5edf993f",
+  "FlClash-0.8.48-android-x86_64.apk": {
+    "hash": "e346c601f2bb99674b26a3e942ba6e6d928368cd8e8f5fccea0837532c81ae23",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -194,9 +194,9 @@
     "icons": {},
     "antiFeatures": [],
     "packageName": "com.follow.clash",
-    "versionCode": 202411201,
+    "versionCode": 202411251,
     "name": "FlClash",
-    "versionName": "0.8.45",
+    "versionName": "0.8.48",
     "minSdkVersion": 21,
     "targetSdkVersion": 34,
     "nativecode": [
@@ -204,8 +204,8 @@
     ],
     "sig": "01d20204fe36565bf08806d0249b75a9",
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-    "size": 40154084,
-    "apkName": "FlClash-0.8.45-android-x86_64.apk",
-    "added": 1722004078.992914
+    "size": 40102082,
+    "apkName": "FlClash-0.8.48-android-x86_64.apk",
+    "added": 1722244707.384965
   }
 }

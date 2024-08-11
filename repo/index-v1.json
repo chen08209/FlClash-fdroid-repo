@@ -1,6 +1,6 @@
 {
   "repo": {
-    "timestamp": 1722857085000,
+    "timestamp": 1723374191000,
     "version": 20001,
     "name": "FlClash",
     "icon": "icon.png",
@@ -22,15 +22,15 @@
         "Connectivity"
       ],
       "changelog": "https://github.com/chen08209/FlClash/releases",
-      "suggestedVersionName": "0.8.51",
-      "suggestedVersionCode": "202410051",
+      "suggestedVersionName": "0.8.52",
+      "suggestedVersionCode": "202410111",
       "issueTracker": "https://github.com/chen08209/FlClash/issues",
       "license": "GPL-3.0-or-later",
       "name": "FlClash",
       "sourceCode": "https://github.com/chen08209/FlClash",
-      "added": 1722857082000,
+      "added": 1723374189000,
       "packageName": "com.follow.clash",
-      "lastUpdated": 1722857082000,
+      "lastUpdated": 1723374189000,
       "localized": {
         "en-US": {
           "description": "\u2708\ufe0f Multi-platform: Android, Windows, macOS and Linux\n\n\ud83d\udcbb Adaptive multiple screen sizes, Multiple color themes available\n\n\ud83d\udca1 Based on Material You Design, Surfboard-like UI\n\n\u2601\ufe0f Supports data sync via WebDAV\n\n\u2728 Support subscription link, Dark mode",
@@ -48,9 +48,9 @@
   "packages": {
     "com.follow.clash": [
       {
-        "added": 1722857082000,
-        "apkName": "FlClash-0.8.51-android-arm64-v8a.apk",
-        "hash": "eb464e29b7ae967eed07e47d1286be6745d2a9a7403c84814c34a3f420da72a9",
+        "added": 1723374189000,
+        "apkName": "FlClash-0.8.52-android-arm64-v8a.apk",
+        "hash": "b2dafce4160450be0d722e28f5e4d420c8e0a086b1899148563164f6c2c8fddc",
         "hashType": "sha256",
         "minSdkVersion": 21,
         "nativecode": [
@@ -59,7 +59,7 @@
         "packageName": "com.follow.clash",
         "sig": "01d20204fe36565bf08806d0249b75a9",
         "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-        "size": 38643194,
+        "size": 39063831,
         "targetSdkVersion": 34,
         "uses-permission": [
           [
@@ -107,8 +107,8 @@
             null
           ]
         ],
-        "versionCode": 202410051,
-        "versionName": "0.8.51"
+        "versionCode": 202410111,
+        "versionName": "0.8.52"
       }
     ]
   }

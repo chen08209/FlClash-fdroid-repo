@@ -1,8 +1,8 @@
 {
   "METADATA_VERSION": 20001,
   "allow_disabled_algorithms": false,
-  "FlClash-0.8.57-android-arm64-v8a.apk": {
-    "hash": "f3d877e2ef35d0150609e63dbb0c1a3e08f285c8e2ff1c44be4aae9d7aea5a02",
+  "FlClash-0.8.60-android-arm64-v8a.apk": {
+    "hash": "75d3dad436eca521bca03936c4086a1783d5e320f3886dad5819eadcc9e3520c",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -56,9 +56,9 @@
     "icons": {},
     "antiFeatures": [],
     "packageName": "com.follow.clash",
-    "versionCode": 202411021,
+    "versionCode": 202411171,
     "name": "FlClash",
-    "versionName": "0.8.57",
+    "versionName": "0.8.60",
     "minSdkVersion": 21,
     "targetSdkVersion": 34,
     "nativecode": [
@@ -66,8 +66,8 @@
     ],
     "sig": "01d20204fe36565bf08806d0249b75a9",
     "signer": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c",
-    "size": 38669638,
-    "apkName": "FlClash-0.8.57-android-arm64-v8a.apk",
-    "added": 1725345639.655759
+    "size": 38834463,
+    "apkName": "FlClash-0.8.60-android-arm64-v8a.apk",
+    "added": 1726595047.413725
   }
 }

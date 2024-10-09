@@ -1,5 +1,5 @@
 {
-  "/etc/issue.net": "Ubuntu 22.04.4 LTS",
+  "/etc/issue.net": "Ubuntu 22.04.5 LTS",
   "antiFeatures": {},
   "apksigner": "/usr/bin/apksigner",
   "archivePolicy0": [],
@@ -10,7 +10,7 @@
     "--use-date-from-apk"
   ],
   "disabled": [],
-  "endTimestamp": 1726595053335,
+  "endTimestamp": 1728440033545,
   "failedBuilds": {},
   "jarsigner": "/usr/lib/jvm/default-java/bin/jarsigner",
   "keytool": "/usr/lib/jvm/default-java/bin/keytool",
@@ -21,6 +21,6 @@
   "noUpdateCheck": [
     "com.follow.clash"
   ],
-  "startTimestamp": 1726595048000,
+  "startTimestamp": 1728440029000,
   "subcommand": "update"
 }

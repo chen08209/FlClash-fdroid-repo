@@ -14,19 +14,19 @@
       }
     },
     "address": "https://chen08209.github.io/FlClash-fdroid-repo/repo",
-    "timestamp": 1739091526000
+    "timestamp": 1739092880000
   },
   "packages": {
     "com.follow.clash": {
       "metadata": {
-        "added": 1739091524000,
+        "added": 1739092878000,
         "categories": [
           "Internet",
           "Connectivity"
         ],
         "changelog": "https://github.com/chen08209/FlClash/releases",
         "issueTracker": "https://github.com/chen08209/FlClash/issues",
-        "lastUpdated": 1739091524000,
+        "lastUpdated": 1739092878000,
         "license": "GPL-3.0-or-later",
         "sourceCode": "https://github.com/chen08209/FlClash",
         "authorName": "chen08209",
@@ -56,19 +56,19 @@
         "preferredSigner": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
       },
       "versions": {
-        "91a876516cc5439cb4118cff4690c03de6e10c1fd46874ab9455105fa894985b": {
-          "added": 1739091524000,
+        "a099d9e692d552641cb2accb7b3012af279fc3f3ebdd0cec2ffb2231c4b4200e": {
+          "added": 1739092878000,
           "file": {
-            "name": "/FlClash-0.8.75-android-arm64-v8a.apk",
-            "sha256": "91a876516cc5439cb4118cff4690c03de6e10c1fd46874ab9455105fa894985b",
-            "size": 44887742
+            "name": "/FlClash-0.8.76-android-arm64-v8a.apk",
+            "sha256": "a099d9e692d552641cb2accb7b3012af279fc3f3ebdd0cec2ffb2231c4b4200e",
+            "size": 44887722
           },
           "manifest": {
             "nativecode": [
               "arm64-v8a"
             ],
-            "versionName": "0.8.75",
-            "versionCode": 202504091,
+            "versionName": "0.8.76",
+            "versionCode": 202504092,
             "usesSdk": {
               "minSdkVersion": 21,
               "targetSdkVersion": 34

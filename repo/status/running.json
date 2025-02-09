@@ -1,11 +1,26 @@
 {
-  "/etc/issue.net": "Ubuntu 22.04.5 LTS",
+  "/etc/issue.net": "Ubuntu 24.04.1 LTS",
+  "antiFeatures": {},
+  "apksigner": "/usr/bin/apksigner",
+  "archivePolicy0": [],
   "commandLine": [
     "/usr/bin/fdroid update",
     "--pretty",
     "--delete-unknown",
     "--use-date-from-apk"
   ],
-  "startTimestamp": 1733491214000,
+  "disabled": [],
+  "endTimestamp": 1739091529517,
+  "failedBuilds": {},
+  "jarsigner": "/usr/lib/jvm/default-java/bin/jarsigner",
+  "keytool": "/usr/lib/jvm/default-java/bin/keytool",
+  "needsUpdate": [],
+  "noPackages": [
+    "com.follow.clash"
+  ],
+  "noUpdateCheck": [
+    "com.follow.clash"
+  ],
+  "startTimestamp": 1739091525000,
   "subcommand": "update"
 }

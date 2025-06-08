@@ -14,11 +14,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Setup fdroidserver and aapt
-        run: |
-          sudo apt-get update
-          sudo apt-get install fdroidserver aapt -y
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -47,7 +42,7 @@ jobs:
       - name: Update fdroidrepo
         run: |
           cd ./fdroid/
-          /usr/bin/fdroid update --pretty --delete-unknown --use-date-from-apk
+          docker run --rm -v $(pwd):/repo ghcr.io/wcbing/fdroid-server:master update --pretty --delete-unknown --use-date-from-apk
           rm config.yml
           cd ..
 

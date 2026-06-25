@@ -1,11 +1,16 @@
 name: deploy
 
 on:
+  push:
+    paths:
+      - 'tmp/*.apk'
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       version:
         description: 'FlClash release version, for example 0.8.93 or v0.8.93'
-        required: true
+        required: false
         type: string
       apk_url:
         description: 'Optional APK download URL. Defaults to the FlClash GitHub release asset.'
@@ -26,23 +31,63 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download APK
+      - name: Prepare APKs
         run: |
           version="${{ inputs.version }}"
           version="${version#v}"
           apk_url="${{ inputs.apk_url }}"
 
-          if [ -z "$apk_url" ]; then
-            apk_url="https://github.com/chen08209/FlClash/releases/download/v${version}/FlClash-${version}-android-arm64-v8a.apk"
+          mkdir -p ./fdroid/repo/
+
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git clone --depth 1 --branch gh-pages "https://github.com/${GITHUB_REPOSITORY}.git" ./.previous-pages
+            if [ -d ./.previous-pages/repo ]; then
+              find ./.previous-pages/repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -exec cp {} ./fdroid/repo/ \;
+            fi
           fi
 
-          mkdir -p ./fdroid/repo/
-          curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+          if [ -n "$apk_url" ]; then
+            if [ -z "$version" ]; then
+              echo "version is required when apk_url is set" >&2
+              exit 1
+            fi
+            curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+          elif [ -n "$version" ]; then
+            apk_url="https://github.com/chen08209/FlClash/releases/download/v${version}/FlClash-${version}-android-arm64-v8a.apk"
+            curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+          else
+            pushed_apk=$(find ./tmp -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print -quit)
+            if [ -z "$pushed_apk" ]; then
+              echo "No pushed APK found in ./tmp" >&2
+              exit 1
+            fi
+            cp "$pushed_apk" ./fdroid/repo/
+          fi
+
+      - name: Keep Latest APKs
+        run: |
+          cd ./fdroid/
+          find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print0 |
+            while IFS= read -r -d '' apk; do
+              version_code=$(aapt dump badging "$apk" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
+              printf '%s\t%s\n' "$version_code" "$apk"
+            done |
+            sort -rn |
+            awk 'NR > 2 { print $2 }' |
+            xargs -r rm -f
 
       - name: Set Secrets
         run: |
           cd ./fdroid/
-          apk_path=$(find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print -quit)
+          apk_path=$(
+            find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print0 |
+              while IFS= read -r -d '' apk; do
+                version_code=$(aapt dump badging "$apk" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
+                printf '%s\t%s\n' "$version_code" "$apk"
+              done |
+              sort -rn |
+              awk 'NR == 1 { print $2 }'
+          )
           if [ -z "$apk_path" ]; then
             echo "No FlClash APK found in ./fdroid/repo" >&2
             exit 1
@@ -70,11 +115,40 @@ jobs:
           cd ..
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: fdroid
-          publish_branch: gh-pages
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          rm -rf ./.publish
+          mkdir ./.publish
+          cp -a ./fdroid/. ./.publish/
+
+          git clone --no-checkout "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ./.publish-git
+          cd ./.publish-git
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          if git fetch origin gh-pages --depth 1; then
+            git checkout FETCH_HEAD
+            old_tree=$(git rev-parse HEAD^{tree})
+            old_commit=$(printf 'Previous F-Droid repo snapshot\n' | git commit-tree "$old_tree")
+            expected_remote=$(git rev-parse FETCH_HEAD)
+          else
+            old_commit=''
+            expected_remote=''
+          fi
+
+          git rm -r --ignore-unmatch .
+          cp -a ../.publish/. .
+          git add -A
+          new_tree=$(git write-tree)
+
+          if [ -n "$old_commit" ]; then
+            new_commit=$(printf 'Deploy F-Droid repo from %s\n' "$GITHUB_SHA" | git commit-tree "$new_tree" -p "$old_commit")
+            git push --force-with-lease=refs/heads/gh-pages:"$expected_remote" origin "$new_commit":refs/heads/gh-pages
+          else
+            new_commit=$(printf 'Deploy F-Droid repo from %s\n' "$GITHUB_SHA" | git commit-tree "$new_tree")
+            git push origin "$new_commit":refs/heads/gh-pages
+          fi

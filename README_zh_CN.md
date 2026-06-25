@@ -21,3 +21,14 @@ FlClash 官方 F-Droid 仓库。
 
 你也可以扫描下方二维码来添加：
 ![二维码](https://chen08209.github.io/flclash-fdroid-repo/repo/index.png)
+
+## 发布 Release APK
+
+下载 FlClash release APK 到 `tmp/`，然后提交并推送，触发 deploy workflow：
+
+```bash
+scripts/fetch-flclash-release-apk.sh 0.8.94
+git add tmp/FlClash-0.8.94-android-arm64-v8a.apk
+git commit -m "Update from v0.8.94"
+git push origin main
+```

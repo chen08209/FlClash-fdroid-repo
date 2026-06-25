@@ -22,3 +22,14 @@ Copy what your need to your F-Droid client:
 Also you can scan the QR Code to add this repo:
 
 ![QR Code](https://chen08209.github.io/FlClash-fdroid-repo/repo/index.png)
+
+## Publish a Release APK
+
+Fetch a FlClash release APK into `tmp/`, then commit and push it to trigger the deploy workflow:
+
+```bash
+scripts/fetch-flclash-release-apk.sh 0.8.94
+git add tmp/FlClash-0.8.94-android-arm64-v8a.apk
+git commit -m "Update from v0.8.94"
+git push origin main
+```

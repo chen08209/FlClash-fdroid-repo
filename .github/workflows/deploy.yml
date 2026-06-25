@@ -28,7 +28,10 @@ jobs:
       - name: Setup fdroidserver and aapt
         run: |
           sudo apt-get update
-          sudo apt-get install fdroidserver aapt -y
+          sudo apt-get install aapt apksigner pipx -y
+          pipx install fdroidserver
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          fdroid --version
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -103,6 +106,7 @@ jobs:
           sed -i 's/KEYPASS/${{ secrets.KEY_PASSWORD }}/g' config.yml
           sed -i 's/KEYDNAME/${{ secrets.KEY_DNAME }}/g' config.yml
           echo "${{ secrets.KEYSTORE }}" | base64 --decode > keystore.keystore
+          chmod 600 config.yml keystore.keystore
 
           sed -i "s/VERSIONCODE/$VERSIONCODE/g" ./metadata/com.follow.clash.yml
           sed -i "s/VERSION/$VERSION/g" ./metadata/com.follow.clash.yml
@@ -112,7 +116,7 @@ jobs:
       - name: Update fdroidrepo
         run: |
           cd ./fdroid/
-          /usr/bin/fdroid update --pretty --delete-unknown --use-date-from-apk
+          fdroid update --pretty --delete-unknown --use-date-from-apk
           rm config.yml keystore.keystore
           cd ..
 

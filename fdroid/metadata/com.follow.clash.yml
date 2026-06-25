@@ -1,0 +1,16 @@
+Categories:
+  - Internet
+  - Connectivity
+
+AuthorName: 'chen08209'
+License: GPL-3.0-or-later
+Name: FlClash
+
+SourceCode: https://github.com/chen08209/FlClash
+IssueTracker: https://github.com/chen08209/FlClash/issues
+Changelog: https://github.com/chen08209/FlClash/releases
+
+AllowedAPKSigningKeys: 2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c
+
+CurrentVersion: VERSION
+CurrentVersionCode: VERSIONCODE

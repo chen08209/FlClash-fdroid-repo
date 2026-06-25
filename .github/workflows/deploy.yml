@@ -1,0 +1,80 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'FlClash release version, for example 0.8.93 or v0.8.93'
+        required: true
+        type: string
+      apk_url:
+        description: 'Optional APK download URL. Defaults to the FlClash GitHub release asset.'
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Setup fdroidserver and aapt
+        run: |
+          sudo apt-get update
+          sudo apt-get install fdroidserver aapt -y
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download APK
+        run: |
+          version="${{ inputs.version }}"
+          version="${version#v}"
+          apk_url="${{ inputs.apk_url }}"
+
+          if [ -z "$apk_url" ]; then
+            apk_url="https://github.com/chen08209/FlClash/releases/download/v${version}/FlClash-${version}-android-arm64-v8a.apk"
+          fi
+
+          mkdir -p ./fdroid/repo/
+          curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+
+      - name: Set Secrets
+        run: |
+          cd ./fdroid/
+          apk_path=$(find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print -quit)
+          if [ -z "$apk_path" ]; then
+            echo "No FlClash APK found in ./fdroid/repo" >&2
+            exit 1
+          fi
+
+          export VERSION=$(aapt dump badging "$apk_path" | grep versionName | sed "s/.*versionName='//" | sed "s/'.*//")
+          export VERSIONCODE=$(aapt dump badging "$apk_path" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
+
+          sed -i 's/KEYALIAS/${{ secrets.KEY_ALIAS }}/g' config.yml
+          sed -i 's/KEYSTOREPASS/${{ secrets.STORE_PASSWORD }}/g' config.yml
+          sed -i 's/KEYPASS/${{ secrets.KEY_PASSWORD }}/g' config.yml
+          sed -i 's/KEYDNAME/${{ secrets.KEY_DNAME }}/g' config.yml
+          echo "${{ secrets.KEYSTORE }}" | base64 --decode > keystore.keystore
+
+          sed -i "s/VERSIONCODE/$VERSIONCODE/g" ./metadata/com.follow.clash.yml
+          sed -i "s/VERSION/$VERSION/g" ./metadata/com.follow.clash.yml
+
+          cd ..
+
+      - name: Update fdroidrepo
+        run: |
+          cd ./fdroid/
+          /usr/bin/fdroid update --pretty --delete-unknown --use-date-from-apk
+          rm config.yml keystore.keystore
+          cd ..
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: fdroid
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

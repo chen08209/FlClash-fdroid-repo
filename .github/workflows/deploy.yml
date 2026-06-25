@@ -20,6 +20,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      APK_KEEP_COUNT: 5
     permissions:
       contents: write
     steps:
@@ -73,7 +75,7 @@ jobs:
               printf '%s\t%s\n' "$version_code" "$apk"
             done |
             sort -rn |
-            awk 'NR > 2 { print $2 }' |
+            awk -v keep="$APK_KEEP_COUNT" 'NR > keep { print $2 }' |
             xargs -r rm -f
 
       - name: Set Secrets

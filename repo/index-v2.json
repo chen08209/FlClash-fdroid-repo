@@ -1,0 +1,160 @@
+{
+  "repo": {
+    "name": {
+      "en-US": "FlClash"
+    },
+    "description": {
+      "en-US": "The official F-Droid repository for FlClash."
+    },
+    "icon": {
+      "en-US": {
+        "name": "/icons/icon.png",
+        "sha256": "b6045af66e2e765643a50ac4871d388a9004e90dea93046696ac742ff8bf2e23",
+        "size": 19980
+      }
+    },
+    "address": "https://chen08209.github.io/FlClash-fdroid-repo/repo",
+    "timestamp": 1782364917000,
+    "categories": {
+      "Connectivity": {
+        "name": {
+          "en-US": "Connectivity"
+        }
+      },
+      "Internet": {
+        "name": {
+          "en-US": "Internet"
+        }
+      }
+    }
+  },
+  "packages": {
+    "com.follow.clash": {
+      "metadata": {
+        "added": 1782364914000,
+        "categories": [
+          "Internet",
+          "Connectivity"
+        ],
+        "changelog": "https://github.com/chen08209/FlClash/releases",
+        "issueTracker": "https://github.com/chen08209/FlClash/issues",
+        "lastUpdated": 1782364914000,
+        "license": "GPL-3.0-or-later",
+        "sourceCode": "https://github.com/chen08209/FlClash",
+        "authorName": "chen08209",
+        "name": {
+          "en-US": "FlClash"
+        },
+        "summary": {
+          "en-US": "A multi-platform proxy client based on ClashMeta.",
+          "zh-CN": "基于ClashMeta的多平台代理客户端，简单易用，开源无广告。"
+        },
+        "description": {
+          "en-US": "✈️ Multi-platform: Android, Windows, macOS and Linux\n\n💻 Adaptive multiple screen sizes, Multiple color themes available\n\n💡 Based on Material You Design, Surfboard-like UI\n\n☁️ Supports data sync via WebDAV\n\n✨ Support subscription link, Dark mode",
+          "zh-CN": "✈️ 多平台: Android, Windows, macOS and Linux\n\n💻 自适应多个屏幕尺寸,多种颜色主题可供选择\n\n💡 基本 Material You 设计, 类Surfboard用户界面\n\n☁️ 支持通过WebDAV同步数据\n\n✨ 支持一键导入订阅, 深色模式"
+        },
+        "icon": {
+          "en-US": {
+            "name": "/com.follow.clash/en-US/icon_WEd-r8lMFUzb7RfF4hkm1NZdvmb7DZSsQI-L_YuRq7A=.png",
+            "sha256": "58477eafc94c154cdbed17c5e21926d4d65dbe66fb0d94ac408f8bfd8b91abb0",
+            "size": 17577
+          },
+          "zh-CN": {
+            "name": "/com.follow.clash/zh-CN/icon_WEd-r8lMFUzb7RfF4hkm1NZdvmb7DZSsQI-L_YuRq7A=.png",
+            "sha256": "58477eafc94c154cdbed17c5e21926d4d65dbe66fb0d94ac408f8bfd8b91abb0",
+            "size": 17577
+          }
+        },
+        "preferredSigner": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
+      },
+      "versions": {
+        "f31181c9e40259936ac70d6bc3ad36a6755739229d3e784102cfaa59fa9dc647": {
+          "added": 1782364914000,
+          "file": {
+            "name": "/FlClash-0.8.93-android-arm64-v8a.apk",
+            "sha256": "f31181c9e40259936ac70d6bc3ad36a6755739229d3e784102cfaa59fa9dc647",
+            "size": 51822763
+          },
+          "manifest": {
+            "nativecode": [
+              "arm64-v8a"
+            ],
+            "versionName": "0.8.93",
+            "versionCode": 2026054901,
+            "usesSdk": {
+              "minSdkVersion": 24,
+              "targetSdkVersion": 36
+            },
+            "signer": {
+              "sha256": [
+                "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.ACCESS_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.ACCESS_WIFI_STATE"
+              },
+              {
+                "name": "android.permission.CHANGE_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.QUERY_ALL_PACKAGES"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.POST_PROMOTED_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+              },
+              {
+                "name": "com.follow.clash.permission.RECEIVE_BROADCASTS"
+              },
+              {
+                "name": "android.permission.CAMERA"
+              },
+              {
+                "name": "android.permission.ACCESS_FINE_LOCATION"
+              },
+              {
+                "name": "android.permission.WAKE_LOCK"
+              },
+              {
+                "name": "com.google.android.gms.permission.AD_ID"
+              },
+              {
+                "name": "android.permission.ACCESS_ADSERVICES_ATTRIBUTION"
+              },
+              {
+                "name": "android.permission.ACCESS_ADSERVICES_AD_ID"
+              },
+              {
+                "name": "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
+              },
+              {
+                "name": "com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

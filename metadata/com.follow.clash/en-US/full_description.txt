@@ -1,0 +1,9 @@
+✈️ Multi-platform: Android, Windows, macOS and Linux
+
+💻 Adaptive multiple screen sizes, Multiple color themes available
+
+💡 Based on Material You Design, Surfboard-like UI
+
+☁️ Supports data sync via WebDAV
+
+✨ Support subscription link, Dark mode

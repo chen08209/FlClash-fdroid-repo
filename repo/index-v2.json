@@ -14,7 +14,7 @@
       }
     },
     "address": "https://chen08209.github.io/FlClash-fdroid-repo/repo",
-    "timestamp": 1792822798000,
+    "timestamp": 1793778967000,
     "categories": {
       "Connectivity": {
         "name": {
@@ -31,14 +31,14 @@
   "packages": {
     "com.follow.clash": {
       "metadata": {
-        "added": 1792822793000,
+        "added": 1793778962000,
         "categories": [
           "Internet",
           "Connectivity"
         ],
         "changelog": "https://github.com/chen08209/FlClash/releases",
         "issueTracker": "https://github.com/chen08209/FlClash/issues",
-        "lastUpdated": 1792822793000,
+        "lastUpdated": 1793778962000,
         "license": "GPL-3.0-or-later",
         "sourceCode": "https://github.com/chen08209/FlClash",
         "authorName": "chen08209",
@@ -68,8 +68,88 @@
         "preferredSigner": "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
       },
       "versions": {
+        "700570428bde3a1b316ae7f7e8f10d77f9e23ee8bf8b3f45557362a061fbefb3": {
+          "added": 1793778962000,
+          "file": {
+            "name": "/FlClash-0.9.3-android-arm64-v8a.apk",
+            "sha256": "700570428bde3a1b316ae7f7e8f10d77f9e23ee8bf8b3f45557362a061fbefb3",
+            "size": 61020873
+          },
+          "manifest": {
+            "nativecode": [
+              "arm64-v8a"
+            ],
+            "versionName": "0.9.3",
+            "versionCode": 2026112401,
+            "usesSdk": {
+              "minSdkVersion": 24,
+              "targetSdkVersion": 37
+            },
+            "signer": {
+              "sha256": [
+                "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE"
+              },
+              {
+                "name": "android.permission.ACCESS_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.ACCESS_WIFI_STATE"
+              },
+              {
+                "name": "android.permission.CHANGE_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.QUERY_ALL_PACKAGES"
+              },
+              {
+                "name": "com.android.permission.GET_INSTALLED_APPS"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+              },
+              {
+                "name": "android.permission.ACCESS_LOCAL_NETWORK"
+              },
+              {
+                "name": "android.permission.REQUEST_INSTALL_PACKAGES"
+              },
+              {
+                "name": "com.follow.clash.permission.RECEIVE_BROADCASTS"
+              },
+              {
+                "name": "android.permission.CAMERA"
+              },
+              {
+                "name": "android.permission.ACCESS_COARSE_LOCATION"
+              },
+              {
+                "name": "android.permission.ACCESS_FINE_LOCATION"
+              },
+              {
+                "name": "android.permission.ACCESS_BACKGROUND_LOCATION"
+              },
+              {
+                "name": "com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        },
         "ff6a953c0f5c12e6bdc97b49428b565b64c4a62d85e50081823ba297407529b1": {
-          "added": 1792822793000,
+          "added": 1793778962000,
           "file": {
             "name": "/FlClash-0.9.2-android-arm64-v8a.apk",
             "sha256": "ff6a953c0f5c12e6bdc97b49428b565b64c4a62d85e50081823ba297407529b1",
@@ -146,7 +226,7 @@
           }
         },
         "7a8aeedbe3c376b724a1f76521f5322df1da4bb8d8e09833a2fa804b2913ecc2": {
-          "added": 1792822793000,
+          "added": 1793778962000,
           "file": {
             "name": "/FlClash-0.9.1-android-arm64-v8a.apk",
             "sha256": "7a8aeedbe3c376b724a1f76521f5322df1da4bb8d8e09833a2fa804b2913ecc2",
@@ -223,7 +303,7 @@
           }
         },
         "ed06fb1ccf73156dbea07cf906b0ab2f2bececca29a510b288a5621868ff2bcf": {
-          "added": 1792822793000,
+          "added": 1793778962000,
           "file": {
             "name": "/FlClash-0.9.0-android-arm64-v8a.apk",
             "sha256": "ed06fb1ccf73156dbea07cf906b0ab2f2bececca29a510b288a5621868ff2bcf",
@@ -315,7 +395,7 @@
           }
         },
         "6caaa8165fbc43232c3a0184b570852895ffa9d6171cee696e25f11836b1a3f0": {
-          "added": 1792822793000,
+          "added": 1793778962000,
           "file": {
             "name": "/FlClash-0.8.99-android-arm64-v8a.apk",
             "sha256": "6caaa8165fbc43232c3a0184b570852895ffa9d6171cee696e25f11836b1a3f0",
@@ -369,95 +449,6 @@
               },
               {
                 "name": "android.permission.ACCESS_LOCAL_NETWORK"
-              },
-              {
-                "name": "com.follow.clash.permission.RECEIVE_BROADCASTS"
-              },
-              {
-                "name": "android.permission.CAMERA"
-              },
-              {
-                "name": "android.permission.ACCESS_COARSE_LOCATION"
-              },
-              {
-                "name": "android.permission.ACCESS_FINE_LOCATION"
-              },
-              {
-                "name": "android.permission.ACCESS_BACKGROUND_LOCATION"
-              },
-              {
-                "name": "android.permission.WAKE_LOCK"
-              },
-              {
-                "name": "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
-              },
-              {
-                "name": "com.google.android.gms.permission.AD_ID"
-              },
-              {
-                "name": "android.permission.ACCESS_ADSERVICES_ATTRIBUTION"
-              },
-              {
-                "name": "android.permission.ACCESS_ADSERVICES_AD_ID"
-              },
-              {
-                "name": "com.follow.clash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-              }
-            ]
-          }
-        },
-        "45bcbaee28e7cacec6dc4c98e17da5632be9c89b833be6cc446e5f038d86b83c": {
-          "added": 1792822793000,
-          "file": {
-            "name": "/FlClash-0.8.98-android-arm64-v8a.apk",
-            "sha256": "45bcbaee28e7cacec6dc4c98e17da5632be9c89b833be6cc446e5f038d86b83c",
-            "size": 56366720
-          },
-          "manifest": {
-            "nativecode": [
-              "arm64-v8a"
-            ],
-            "versionName": "0.8.98",
-            "versionCode": 2026093401,
-            "usesSdk": {
-              "minSdkVersion": 24,
-              "targetSdkVersion": 36
-            },
-            "signer": {
-              "sha256": [
-                "2859e236b6c1c6073773752678c52e8e902a9503ae9beed6729ca999c376841c"
-              ]
-            },
-            "usesPermission": [
-              {
-                "name": "android.permission.INTERNET"
-              },
-              {
-                "name": "android.permission.FOREGROUND_SERVICE"
-              },
-              {
-                "name": "android.permission.ACCESS_NETWORK_STATE"
-              },
-              {
-                "name": "android.permission.ACCESS_WIFI_STATE"
-              },
-              {
-                "name": "android.permission.CHANGE_NETWORK_STATE"
-              },
-              {
-                "name": "android.permission.QUERY_ALL_PACKAGES"
-              },
-              {
-                "name": "com.android.permission.GET_INSTALLED_APPS"
-              },
-              {
-                "name": "android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
-              },
-              {
-                "name": "android.permission.POST_NOTIFICATIONS"
-              },
-              {
-                "name": "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
               },
               {
                 "name": "com.follow.clash.permission.RECEIVE_BROADCASTS"

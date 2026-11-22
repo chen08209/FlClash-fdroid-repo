@@ -25,11 +25,23 @@ Also you can scan the QR Code to add this repo:
 
 ## Publish a Release APK
 
-Fetch a FlClash release APK into `tmp/`, then commit and push it to trigger the deploy workflow:
+Each stable FlClash release pushes its Android arm64 APK into `tmp/`, which triggers the deploy workflow. The workflow
+does not rely on the APK file name: it takes the only `*.apk` in `tmp/`, checks with `aapt` that it is
+`com.follow.clash` with arm64 native code, and publishes it as `FlClash-<versionName>-android-arm64.apk`. The five
+APKs with the highest `versionCode` stay in the repo.
+
+To publish a release by hand, run the deploy workflow with its version. It finds the arm64 APK in the GitHub release
+and verifies it against the release's checksum file:
 
 ```bash
-scripts/fetch-flclash-release-apk.sh 0.8.94
-git add tmp/FlClash-0.8.94-android-arm64-v8a.apk
-git commit -m "Update from v0.8.94"
+gh workflow run deploy -R chen08209/FlClash-fdroid-repo -f version=0.9.4
+```
+
+Or fetch the APK into `tmp/` (any other APK there is removed), then commit and push it:
+
+```bash
+scripts/fetch-flclash-release-apk.sh 0.9.4
+git add -A tmp
+git commit -m "Update from v0.9.4"
 git push origin main
 ```

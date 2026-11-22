@@ -24,11 +24,19 @@ FlClash 官方 F-Droid 仓库。
 
 ## 发布 Release APK
 
-下载 FlClash release APK 到 `tmp/`，然后提交并推送，触发 deploy workflow：
+FlClash 每个正式版会把 Android arm64 APK 推到 `tmp/`，触发 deploy workflow。workflow 不依赖 APK 文件名：取 `tmp/` 里唯一的 `*.apk`，用 `aapt` 确认包名是 `com.follow.clash` 且带 arm64 原生库，再以 `FlClash-<versionName>-android-arm64.apk` 发布。仓库保留 `versionCode` 最高的 5 个 APK。
+
+手动发布某个版本时，带上版本号运行 deploy workflow，它会在 GitHub Release 里找 arm64 APK，并用同一 Release 的校验文件核对：
 
 ```bash
-scripts/fetch-flclash-release-apk.sh 0.8.94
-git add tmp/FlClash-0.8.94-android-arm64-v8a.apk
-git commit -m "Update from v0.8.94"
+gh workflow run deploy -R chen08209/FlClash-fdroid-repo -f version=0.9.4
+```
+
+也可以先把 APK 下载到 `tmp/`（`tmp/` 里其他 APK 会被删掉），再提交并推送：
+
+```bash
+scripts/fetch-flclash-release-apk.sh 0.9.4
+git add -A tmp
+git commit -m "Update from v0.9.4"
 git push origin main
 ```

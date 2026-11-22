@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'FlClash release version, for example 0.8.93 or v0.8.93'
+        description: 'FlClash release version, for example 0.9.4 or v0.9.4. Fetches its arm64 APK from the GitHub release and checks it against the release checksums.'
         required: false
         type: string
       apk_url:
-        description: 'Optional APK download URL. Defaults to the FlClash GitHub release asset.'
+        description: 'Optional APK download URL, used instead of the release lookup. Not checksum-verified; if version is also set, the APK versionName must match it.'
         required: false
         type: string
 
@@ -37,69 +37,46 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare APKs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INPUT_VERSION: ${{ inputs.version }}
+          INPUT_APK_URL: ${{ inputs.apk_url }}
         run: |
-          version="${{ inputs.version }}"
-          version="${version#v}"
-          apk_url="${{ inputs.apk_url }}"
+          version="${INPUT_VERSION#v}"
 
           mkdir -p ./fdroid/repo/
 
           if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
             git clone --depth 1 --branch gh-pages "https://github.com/${GITHUB_REPOSITORY}.git" ./.previous-pages
             if [ -d ./.previous-pages/repo ]; then
-              find ./.previous-pages/repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -exec cp {} ./fdroid/repo/ \;
+              find ./.previous-pages/repo -maxdepth 1 -type f -name '*.apk' -exec cp {} ./fdroid/repo/ \;
             fi
           fi
 
-          if [ -n "$apk_url" ]; then
-            if [ -z "$version" ]; then
-              echo "version is required when apk_url is set" >&2
-              exit 1
-            fi
-            curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+          if [ -n "$INPUT_APK_URL" ]; then
+            inbox="${RUNNER_TEMP}/incoming"
+            mkdir -p "$inbox"
+            curl --fail --location --retry 3 --output "${inbox}/download.apk" "$INPUT_APK_URL"
           elif [ -n "$version" ]; then
-            apk_url="https://github.com/chen08209/FlClash/releases/download/v${version}/FlClash-${version}-android-arm64-v8a.apk"
-            curl --fail --location --retry 3 --output "./fdroid/repo/FlClash-${version}-android-arm64-v8a.apk" "$apk_url"
+            inbox="${RUNNER_TEMP}/incoming"
+            scripts/fetch-flclash-release-apk.sh "$version" --output-dir "$inbox"
           else
-            pushed_apk=$(find ./tmp -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print -quit)
-            if [ -z "$pushed_apk" ]; then
-              echo "No pushed APK found in ./tmp" >&2
-              exit 1
-            fi
-            cp "$pushed_apk" ./fdroid/repo/
+            inbox=./tmp
           fi
+
+          apk=$(scripts/fdroid-apk.sh inbox "$inbox")
+          scripts/fdroid-apk.sh import "$apk" ./fdroid/repo "$version"
 
       - name: Keep Latest APKs
-        run: |
-          cd ./fdroid/
-          find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print0 |
-            while IFS= read -r -d '' apk; do
-              version_code=$(aapt dump badging "$apk" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
-              printf '%s\t%s\n' "$version_code" "$apk"
-            done |
-            sort -rn |
-            awk -v keep="$APK_KEEP_COUNT" 'NR > keep { print $2 }' |
-            xargs -r rm -f
+        run: scripts/fdroid-apk.sh prune ./fdroid/repo "$APK_KEEP_COUNT"
 
       - name: Set Secrets
         run: |
           cd ./fdroid/
-          apk_path=$(
-            find ./repo -maxdepth 1 -name 'FlClash-*-android-arm64-v8a.apk' -print0 |
-              while IFS= read -r -d '' apk; do
-                version_code=$(aapt dump badging "$apk" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
-                printf '%s\t%s\n' "$version_code" "$apk"
-              done |
-              sort -rn |
-              awk 'NR == 1 { print $2 }'
-          )
-          if [ -z "$apk_path" ]; then
-            echo "No FlClash APK found in ./fdroid/repo" >&2
-            exit 1
-          fi
-
-          export VERSION=$(aapt dump badging "$apk_path" | grep versionName | sed "s/.*versionName='//" | sed "s/'.*//")
-          export VERSIONCODE=$(aapt dump badging "$apk_path" | grep versionCode | sed "s/.*versionCode='//" | sed "s/'.*//")
+          apk_path=$(../scripts/fdroid-apk.sh latest ./repo)
+          apk_info=$(../scripts/fdroid-apk.sh info "$apk_path")
+          read -r VERSIONCODE VERSION <<<"$apk_info"
+          export VERSION VERSIONCODE
 
           sed -i 's/KEYALIAS/${{ secrets.KEY_ALIAS }}/g' config.yml
           sed -i 's/KEYSTOREPASS/${{ secrets.STORE_PASSWORD }}/g' config.yml
@@ -138,7 +115,7 @@ jobs:
 
           if git fetch origin gh-pages --depth 1; then
             git checkout FETCH_HEAD
-            old_tree=$(git rev-parse HEAD^{tree})
+            old_tree=$(git rev-parse 'HEAD^{tree}')
             old_commit=$(printf 'Previous F-Droid repo snapshot\n' | git commit-tree "$old_tree")
             expected_remote=$(git rev-parse FETCH_HEAD)
           else
